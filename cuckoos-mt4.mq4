@@ -1,6 +1,6 @@
 // MIT License
 // 
-// Copyright (c) 2020 MINETA Hiroki
+// Copyright (c) 2020 MINETA Hiroki (m10i)
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -50,7 +50,8 @@ void OnTick()
 {
    if (order_init == false || order_prev != OrdersTotal()) {
       string message;
-      message = StringFormat("```日時(Local) : %s\n残高　　　　 : %+10.1f%s\n有効証拠金　 : %+10.1f%s\n損益　　　　 : %+10.1f%s```", 
+      message = StringFormat("```アカウントID : %d\n日時(Local) : %s\n残高　　　　 : %+10.1f%s\n有効証拠金　 : %+10.1f%s\n損益　　　　 : %+10.1f%s```", 
+         AccountInfoInteger(ACCOUNT_LOGIN),
          TimeToString(TimeLocal(), TIME_DATE | TIME_SECONDS),
          AccountBalance(),
          AccountCurrency(),
